@@ -50,7 +50,7 @@ npm install --save ethjs-query
 ```js
 const BN = require('bn.js');
 const HttpProvider = require('ethjs-provider-http');
-const Eth = require('ethjs-query');
+const Eth = require('@fksyuan/ethjs-query');
 const eth = new Eth(new HttpProvider('http://localhost:8545'));
 
 eth.getBalance('0x407d73d8a49eeb85d32cf465507dd71d507100c1', cb);
@@ -94,7 +94,7 @@ Error handling is done through function callbacks or promised catches.
 
 ```js
 const HttpProvider = require('ethjs-provider-http');
-const Eth = require('ethjs-query');
+const Eth = require('@fksyuan/ethjs-query');
 const eth = new Eth(new HttpProvider('http://localhost:8545'), { debug: true, logger: console, jsonSpace: 0 });
 
 eth.accounts(cb);
@@ -116,7 +116,7 @@ eth.accounts(cb);
 
 ```js
 const HttpProvider = require('ethjs-provider-http');
-const Eth = require('ethjs-query');
+const Eth = require('@fksyuan/ethjs-query');
 const eth = new Eth(new HttpProvider('http://localhost:8545'));
 
 eth.protocolVersion(cb);

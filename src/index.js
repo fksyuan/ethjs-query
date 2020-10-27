@@ -1,4 +1,4 @@
-const format = require('ethjs-format');
+const format = require('@fksyuan/ethjs-format');
 const EthRPC = require('ethjs-rpc');
 
 module.exports = Eth;
@@ -25,7 +25,7 @@ Eth.prototype.log = function log(message) {
 };
 
 Object.keys(format.schema.methods).forEach((rpcMethodName) => {
-  Object.defineProperty(Eth.prototype, rpcMethodName.replace('eth_', ''), {
+  Object.defineProperty(Eth.prototype, rpcMethodName.replace('platon_', ''), {
     enumerable: true,
     value: generateFnFor(rpcMethodName, format.schema.methods[rpcMethodName]),
   });
@@ -38,7 +38,7 @@ function generateFnFor(method, methodObject) {
     let inputError = null; // eslint-disable-line
     const self = this;
     const args = [].slice.call(arguments); // eslint-disable-line
-    const protoMethod = method.replace('eth_', ''); // eslint-disable-line
+    const protoMethod = method.replace('platon_', ''); // eslint-disable-line
 
     if (args.length > 0 && typeof args[args.length - 1] === 'function') {
       protoCallback = args.pop();

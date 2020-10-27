@@ -12,7 +12,7 @@ npm install --save ethjs-query
 
 ```js
 const HttpProvider = require('ethjs-provider-http');
-const Eth = require('ethjs-query');
+const Eth = require('@fksyuan/ethjs-query');
 const eth = new Eth(new HttpProvider('http://localhost:8545'));
 
 eth.getBalance('0x407d73d8a49eeb85d32cf465507dd71d507100c1', cb);
@@ -36,7 +36,7 @@ eth.sendTransaction({
 
 ```js
 const HttpProvider = require('ethjs-provider-http');
-const Eth = require('ethjs-query');
+const Eth = require('@fksyuan/ethjs-query');
 const eth = new Eth(new HttpProvider('http://localhost:8545'), { debug: true, logger: console, jsonSpace: 0 });
 
 eth.accounts(cb);
@@ -68,7 +68,7 @@ Error handling is done through function callbacks or promised catches.
 
 ## Supported Methods
 
-`ethjs-query` supports all Ethereum spec RPC methods. Note, all `eth` RPC methods are attached as methods to the `Eth` object without the `eth_` prefix. All other methods (e.g. `web3_`, `net_` and `ssh_` etc.) require the full RPC method name (note, this policy may change in the future).
+`ethjs-query` supports all Ethereum spec RPC methods. Note, all `eth` RPC methods are attached as methods to the `Eth` object without the `platon_` prefix. All other methods (e.g. `web3_`, `net_` and `ssh_` etc.) require the full RPC method name (note, this policy may change in the future).
 
 * [eth.protocolVersion](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_protocolversion)
 * [eth.syncing](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_syncing)
